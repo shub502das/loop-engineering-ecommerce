@@ -324,11 +324,11 @@ a { text-decoration: none; }
   max-height: 86%;
   object-fit: contain;
   border-radius: 14%;
-  /* border: 8px solid rgba(255,255,255,0.12);
-  filter: drop-shadow(0 24px 48px rgba(0,224,255,0.24)); */
   transition: transform 0.35s ease, box-shadow 0.25s ease;
+  animation: grow 0.5s cubic-bezier(.34,1.56,.64,1);
 }
-.hero-art img:hover { transform: translateY(-6px) scale(1.02); }
+@keyframes grow { from { transform: scale(0);} to { transform: scale(1);} }
+/* .hero-art img:hover { transform: translateY(-6px) scale(1.02); } */
 @keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
 
 .stat-pill {
