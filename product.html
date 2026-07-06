@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — SonicWave</title>
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================== NAVBAR ============================== -->
+<nav class="navbar navbar-expand-lg navbar-sonic fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="brand-dot"></span>SonicWave</a>
+    <div class="collapse navbar-collapse d-none d-lg-flex">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html?category=Over-Ear">Over-Ear</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html?category=Gaming">Gaming</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <a href="shop.html" class="icon-link d-none d-md-inline-flex" aria-label="Search"><i class="bi bi-search"></i></a>
+      <a href="cart.html" class="icon-link" aria-label="Cart">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge js-cart-count">0</span>
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start offcanvas-sonic" tabindex="-1" id="navMenu">
+  <div class="offcanvas-header">
+    <span class="navbar-brand"><span class="brand-dot"></span>SonicWave</span>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="shop.html">Shop All</a></li>
+      <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+    </ul>
+  </div>
+</div>
+
+<main style="padding-top:100px;">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-sonic">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+        <li class="breadcrumb-item active" id="crumbName" aria-current="page">Product</li>
+      </ol>
+    </nav>
+
+    <!-- ============================== PDP MAIN ============================== -->
+    <div class="row g-5" id="pdpRoot">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- ============================== SPECIFICATIONS ============================== -->
+    <div class="row mt-5 pt-3">
+      <div class="col-lg-8">
+        <h3 class="mb-3">Specifications</h3>
+        <div class="table-responsive">
+          <table class="table spec-table mb-0" id="specTable"></table>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <h3 class="mb-3">Rating Breakdown</h3>
+        <div class="filter-panel">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="display-5 fw-bold" id="ratingBig">4.8</div>
+            <div>
+              <div class="text-warning" id="ratingStarsBig">★★★★★</div>
+              <div class="small text-secondary" id="ratingCountBig">312 reviews</div>
+            </div>
+          </div>
+          <div class="rating-bar-row mb-2"><span>5★</span><div class="rating-bar"><span style="width:78%"></span></div><span>78%</span></div>
+          <div class="rating-bar-row mb-2"><span>4★</span><div class="rating-bar"><span style="width:14%"></span></div><span>14%</span></div>
+          <div class="rating-bar-row mb-2"><span>3★</span><div class="rating-bar"><span style="width:5%"></span></div><span>5%</span></div>
+          <div class="rating-bar-row mb-2"><span>2★</span><div class="rating-bar"><span style="width:2%"></span></div><span>2%</span></div>
+          <div class="rating-bar-row"><span>1★</span><div class="rating-bar"><span style="width:1%"></span></div><span>1%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== REVIEWS ============================== -->
+    <div class="row mt-5 pt-3">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Customer Reviews</h3>
+          <button class="btn btn-outline-dark-pill btn-sm">Write a Review</button>
+        </div>
+
+        <div class="review-card">
+          <div class="d-flex gap-3">
+            <div class="review-avatar">AM</div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between flex-wrap gap-1">
+                <div><span class="fw-semibold">Alex M.</span> <span class="badge-soft ms-2">Verified Buyer</span></div>
+                <span class="text-warning">★★★★★</span>
+              </div>
+              <p class="mb-0 mt-2 text-secondary">Exceeded expectations. Comfortable for long sessions and the sound is rich without being boomy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="d-flex gap-3">
+            <div class="review-avatar">SK</div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between flex-wrap gap-1">
+                <div><span class="fw-semibold">Sara K.</span> <span class="badge-soft ms-2">Verified Buyer</span></div>
+                <span class="text-warning">★★★★★</span>
+              </div>
+              <p class="mb-0 mt-2 text-secondary">Battery life claims are accurate — genuinely lasts the week on a single charge for my daily use.</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card border-bottom-0">
+          <div class="d-flex gap-3">
+            <div class="review-avatar">DT</div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between flex-wrap gap-1">
+                <div><span class="fw-semibold">David T.</span> <span class="badge-soft ms-2">Verified Buyer</span></div>
+                <span class="text-warning">★★★★☆</span>
+              </div>
+              <p class="mb-0 mt-2 text-secondary">Great value overall. Wish the carry case was included, but the sound quality makes up for it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== RELATED PRODUCTS ============================== -->
+    <div class="row mt-5 pt-3 pb-5">
+      <div class="col-12">
+        <h3 class="mb-4">You Might Also Like</h3>
+        <div class="row g-4" id="relatedGrid"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer-sonic pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <span class="navbar-brand mb-3 d-inline-flex"><span class="brand-dot"></span>SonicWave</span>
+        <p class="small mt-2" style="max-width:320px;">Premium yet accessible audio. Designed to make every listen feel like the first time.</p>
+        <div class="mt-3">
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Shop</h6>
+        <a href="shop.html">All Headphones</a>
+        <a href="shop.html?category=Over-Ear">Over-Ear</a>
+        <a href="shop.html?category=Earbuds">Earbuds</a>
+        <a href="shop.html?category=Gaming">Gaming</a>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Support</h6>
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping Info</a>
+        <a href="#">Returns</a>
+        <a href="#">Warranty</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Join the SonicWave list</h6>
+        <p class="small">Get early access to drops and exclusive offers.</p>
+        <form class="js-newsletter-form d-flex gap-2">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button class="btn btn-primary-gradient" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+      <span>© 2026 SonicWave Audio Inc. All rights reserved.</span>
+      <span><a href="#" class="d-inline">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" class="d-inline">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || SW_PRODUCTS[0].id;
+  const product = swGetProduct(id) || SW_PRODUCTS[0];
+  let selectedColor = product.variants.color[0].key;
+  let qty = 1;
+
+  document.title = product.name + ' — SonicWave';
+  document.getElementById('crumbName').textContent = product.name;
+
+  const toneClass = 'tone-' + product.tone;
+  let activeIdx = 0;
+
+  function currentVariant() {
+    return product.variants.color.find(c => c.key === selectedColor) || product.variants.color[0];
+  }
+
+  // ---- Build gallery thumbnails (real photos, one per angle) ----
+  let thumbsHtml = '';
+  product.gallery.forEach((src, i) => {
+    thumbsHtml += `<div class="col-4">
+      <button type="button" class="product-media pdp-thumb ${toneClass} ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="View image ${i + 1}">
+        <img src="${src}" alt="${product.name} view ${i + 1}" loading="lazy">
+      </button>
+    </div>`;
+  });
+
+  // ---- Color variant options ----
+  const colorSwatches = product.variants.color.map((c, i) => `
+    <span class="swatch ${i === 0 ? 'active' : ''}" data-color="${c.key}" style="background:${c.swatch}" title="${c.label}"></span>
+  `).join('');
+
+  // ---- Feature pills ----
+  const featurePills = product.features.map(f => `
+    <div class="col-6">
+      <div class="feature-pill">
+        <i class="bi ${f.icon}"></i>
+        <div><div class="fp-label">${f.label}</div><div class="fp-value">${f.value}</div></div>
+      </div>
+    </div>
+  `).join('');
+
+  const priceHtml = product.oldPrice
+    ? `<span class="display-6 fw-bold">${swFormatPrice(product.price)}</span> <span class="fs-5 text-secondary text-decoration-line-through ms-2">${swFormatPrice(product.oldPrice)}</span> <span class="badge-soft ms-2">Save ${Math.round((1 - product.price / product.oldPrice) * 100)}%</span>`
+    : `<span class="display-6 fw-bold">${swFormatPrice(product.price)}</span>`;
+
+  const badgesHtml = product.badges.map(b => `<span class="badge-soft me-2">${b}</span>`).join('');
+
+  document.getElementById('pdpRoot').innerHTML = `
+    <div class="col-lg-6">
+      <div class="product-media ${toneClass} mb-3 position-relative" id="mainMedia" style="aspect-ratio:1/1;">
+        <span class="media-badge">${product.badges[0] || product.category}</span>
+        <button type="button" class="gallery-nav gallery-prev" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
+        <button type="button" class="gallery-nav gallery-next" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+        <img id="mainMediaImg" src="${product.gallery[0]}" alt="${product.name}">
+        <div class="variant-tint" id="variantTint" style="background:${product.variants.color[0].swatch}"></div>
+      </div>
+      <div class="row g-3" id="thumbRow">${thumbsHtml}</div>
+    </div>
+    <div class="col-lg-6">
+      <div class="mb-2">${badgesHtml}</div>
+      <p class="section-eyebrow mb-1">${product.category} · ${product.tier}</p>
+      <h1 class="mb-2" style="font-size:2.1rem;">${product.name}</h1>
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <span class="text-warning">${swStars(product.rating)}</span>
+        <span class="fw-semibold">${product.rating}</span>
+        <span class="text-secondary">(${product.reviews} reviews)</span>
+      </div>
+      <div class="mb-3">${priceHtml}</div>
+      <p class="text-secondary mb-4">${product.description}</p>
+
+      <div class="mb-4 d-none">
+        <h6 class="mb-2">Color: <span id="selectedColorLabel">${product.variants.color[0].label}</span></h6>
+        <div class="d-flex gap-2" id="colorSwatches">${colorSwatches}</div>
+      </div>
+
+      <div class="mb-4">
+        <h6 class="mb-2">Quantity</h6>
+        <div class="qty-stepper">
+          <button type="button" id="qtyMinus">−</button>
+          <input type="text" id="qtyInput" value="1" readonly>
+          <button type="button" id="qtyPlus">+</button>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 d-sm-flex mb-4">
+        <button class="btn btn-primary-gradient btn-lg px-4" id="addToCartBtn"><i class="bi bi-bag-plus me-2"></i>Add to Cart</button>
+        <button class="btn btn-outline-dark-pill btn-lg px-4" id="buyNowBtn">Buy Now</button>
+        <button class="btn-ghost-icon mx-auto mx-sm-0" aria-label="Add to wishlist"><i class="bi bi-heart"></i></button>
+      </div>
+
+      <div class="trust-badges-row mb-4">
+        <span class="tb-item"><i class="bi bi-truck"></i> Free shipping over $75</span>
+        <span class="tb-item"><i class="bi bi-arrow-repeat"></i> 30-day returns</span>
+        <span class="tb-item"><i class="bi bi-shield-check"></i> 2-year warranty</span>
+      </div>
+
+      <div class="row g-3">${featurePills}</div>
+    </div>
+  `;
+
+  // ---- Spec table ----
+  document.getElementById('specTable').innerHTML = product.specs.map(([k, v]) => `
+    <tr><th>${k}</th><td>${v}</td></tr>
+  `).join('');
+
+  document.getElementById('ratingBig').textContent = product.rating;
+  document.getElementById('ratingStarsBig').textContent = swStars(product.rating);
+  document.getElementById('ratingCountBig').textContent = product.reviews + ' reviews';
+
+  // ---- Related products (any 3 others) ----
+  const related = SW_PRODUCTS.filter(p => p.id !== product.id).slice(0, 3);
+  document.getElementById('relatedGrid').innerHTML = related.map(p => {
+    const rTone = 'tone-' + p.tone;
+    return `
+    <div class="col-md-4">
+      <div class="product-card">
+        <a href="product.html?id=${p.id}" class="d-block">
+          <div class="product-media ${rTone}">
+            <img src="${swMainImage(p)}" alt="${p.name}" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body-sonic">
+          <span class="p-category">${p.category}</span>
+          <a href="product.html?id=${p.id}" class="text-decoration-none"><h3 class="p-name">${p.name}</h3></a>
+          <div class="rating-row"><span class="stars">${swStars(p.rating)}</span> ${p.rating}</div>
+          <p class="p-feature">${p.shortFeature}</p>
+          <div class="p-price-row"><span class="p-price">${swFormatPrice(p.price)}</span></div>
+        </div>
+        <div class="card-actions">
+          <a href="product.html?id=${p.id}" class="btn btn-dark-pill btn-sm">View Details</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // ---- Interactions ----
+
+  // Gallery: thumbnail click swaps the main image (working slider)
+  function goToImage(idx) {
+    activeIdx = (idx + product.gallery.length) % product.gallery.length;
+    document.getElementById('mainMediaImg').src = product.gallery[activeIdx];
+    document.querySelectorAll('#thumbRow .pdp-thumb').forEach((t, i) => {
+      t.classList.toggle('active', i === activeIdx);
+    });
+  }
+
+  document.querySelectorAll('#thumbRow .pdp-thumb').forEach(t => {
+    t.addEventListener('click', () => goToImage(Number(t.dataset.idx)));
+  });
+  document.querySelector('.gallery-prev').addEventListener('click', () => goToImage(activeIdx - 1));
+  document.querySelector('.gallery-next').addEventListener('click', () => goToImage(activeIdx + 1));
+
+  // Color variant: updates label + tints the active photo to preview the finish
+  document.querySelectorAll('#colorSwatches .swatch').forEach(sw => {
+    sw.addEventListener('click', () => {
+      document.querySelectorAll('#colorSwatches .swatch').forEach(s => s.classList.remove('active'));
+      sw.classList.add('active');
+      selectedColor = sw.dataset.color;
+      const variant = currentVariant();
+      document.getElementById('selectedColorLabel').textContent = variant.label;
+      document.getElementById('variantTint').style.background = variant.swatch;
+    });
+  });
+
+  document.getElementById('qtyMinus').addEventListener('click', () => {
+    qty = Math.max(1, qty - 1);
+    document.getElementById('qtyInput').value = qty;
+  });
+  document.getElementById('qtyPlus').addEventListener('click', () => {
+    qty = qty + 1;
+    document.getElementById('qtyInput').value = qty;
+  });
+
+  document.getElementById('addToCartBtn').addEventListener('click', () => {
+    swAddToCart(product.id, selectedColor, qty);
+  });
+  document.getElementById('buyNowBtn').addEventListener('click', () => {
+    swAddToCart(product.id, selectedColor, qty);
+    window.location.href = 'cart.html';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All Headphones — SonicWave</title>
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================== NAVBAR ============================== -->
+<nav class="navbar navbar-expand-lg navbar-sonic fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="brand-dot"></span>SonicWave</a>
+    <div class="collapse navbar-collapse d-none d-lg-flex">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html?category=Over-Ear">Over-Ear</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html?category=Gaming">Gaming</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <a href="shop.html" class="icon-link d-none d-md-inline-flex" aria-label="Search"><i class="bi bi-search"></i></a>
+      <a href="cart.html" class="icon-link" aria-label="Cart">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge js-cart-count">0</span>
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start offcanvas-sonic" tabindex="-1" id="navMenu">
+  <div class="offcanvas-header">
+    <span class="navbar-brand"><span class="brand-dot"></span>SonicWave</span>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="shop.html">Shop All</a></li>
+      <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================== PAGE HEADER ============================== -->
+<header class="text-white position-relative" style="padding-top:130px; padding-bottom:48px;;">
+  <div class="container position-relative" style="z-index:2;">
+    <h1 class="mb-2">Shop All Headphones</h1>
+    <p class="text-secondary mb-0">6 products engineered for every kind of listener.</p>
+  </div>
+</header>
+
+<!-- ============================== PLP BODY ============================== -->
+<section class="section-pad pt-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- ===== Filters Sidebar ===== -->
+      <aside class="col-lg-3">
+        <button class="btn btn-outline-dark-pill filter-toggle-btn w-100 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+          <i class="bi bi-sliders me-2"></i>Filters &amp; Sort
+        </button>
+        <div class="collapse" id="filterCollapse">
+        <div class="filter-panel mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0">Filters</h6>
+            <button class="btn btn-sm btn-link text-decoration-none p-0" id="clearFilters">Clear all</button>
+          </div>
+
+          <h6>Category</h6>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="Over-Ear" id="catOverEar" data-filter="category">
+            <label class="form-check-label" for="catOverEar">Over-Ear (1)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="Wireless" id="catWireless" data-filter="category">
+            <label class="form-check-label" for="catWireless">Wireless (1)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="Wired" id="catWired" data-filter="category">
+            <label class="form-check-label" for="catWired">Wired (1)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="Earbuds" id="catEarbuds" data-filter="category">
+            <label class="form-check-label" for="catEarbuds">Earbuds (1)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="Gaming" id="catGaming" data-filter="category">
+            <label class="form-check-label" for="catGaming">Gaming (1)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="Studio" id="catStudio" data-filter="category">
+            <label class="form-check-label" for="catStudio">Sport (1)</label>
+          </div>
+
+          <hr>
+
+          <h6>Price Range</h6>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="0-50" id="price1" data-filter="price">
+            <label class="form-check-label" for="price1">Under $50</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="50-150" id="price2" data-filter="price">
+            <label class="form-check-label" for="price2">$50 – $150</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="150-300" id="price3" data-filter="price">
+            <label class="form-check-label" for="price3">$150 – $300</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="300-9999" id="price4" data-filter="price">
+            <label class="form-check-label" for="price4">$300+</label>
+          </div>
+
+          <hr>
+
+          <h6>Features</h6>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="anc" id="featAnc" data-filter="feature">
+            <label class="form-check-label" for="featAnc">Active Noise Cancelling</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="waterproof" id="featWater" data-filter="feature">
+            <label class="form-check-label" for="featWater">Sweat / Water Resistant</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="mic" id="featMic" data-filter="feature">
+            <label class="form-check-label" for="featMic">Built-in Microphone</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input filter-input" type="checkbox" value="rgb" id="featRgb" data-filter="feature">
+            <label class="form-check-label" for="featRgb">RGB Lighting</label>
+          </div>
+        </div>
+        </div>
+      </aside>
+
+      <!-- ===== Product Grid ===== -->
+      <div class="col-lg-9">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
+          <span class="text-secondary small" id="resultCount">Showing 6 of 6 products</span>
+          <div class="d-flex align-items-center gap-2">
+            <label for="sortSelect" class="small text-secondary mb-0">Sort by</label>
+            <select class="form-select form-select-sm" id="sortSelect" style="width:auto;">
+              <option value="popularity">Popularity</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row g-4" id="productGrid">
+
+          <!-- 1. Aura ANC -->
+          <div class="col-md-6 col-xl-4 product-item" data-category="Over-Ear" data-price="349" data-rating="4.8" data-feature="anc mic">
+            <div class="product-card">
+              <a href="product.html?id=aura-anc" class="d-block">
+              <div class="product-media tone-1 position-relative">
+                <span class="media-badge">Best Seller</span>
+                <img src="images/over1-main.jpeg" alt="SonicWave Aura ANC" loading="lazy">
+              </div>
+              </a>
+              <div class="card-body-sonic">
+                <span class="p-category">Over-Ear · Premium</span>
+                <a href="product.html?id=aura-anc" class="text-decoration-none"><h3 class="p-name">SonicWave Aura ANC</h3></a>
+                <div class="rating-row"><span class="stars">★★★★★</span> 4.8 (312)</div>
+                <p class="p-feature">Adaptive ANC · 40h battery · BT 5.3</p>
+                <div class="p-price-row"><span class="p-price">$349</span><span class="p-price-old">$399</span></div>
+              </div>
+              <div class="card-actions">
+                <a href="product.html?id=aura-anc" class="btn btn-dark-pill btn-sm">View Details</a>
+                <button class="btn btn-outline-dark-pill btn-sm" onclick="swAddToCart('aura-anc','black',1)"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Pulse -->
+          <div class="col-md-6 col-xl-4 product-item" data-category="Wireless" data-price="179" data-rating="4.6" data-feature="mic">
+            <div class="product-card">
+              <a href="product.html?id=pulse-wireless" class="d-block">
+              <div class="product-media tone-2 position-relative">
+                <span class="media-badge">Popular</span>
+                <img src="images/wireless-main.jpeg" alt="SonicWave Pulse" loading="lazy">
+              </div>
+              </a>
+              <div class="card-body-sonic">
+                <span class="p-category">Wireless · Mid-Range</span>
+                <a href="product.html?id=pulse-wireless" class="text-decoration-none"><h3 class="p-name">SonicWave Pulse</h3></a>
+                <div class="rating-row"><span class="stars">★★★★★</span> 4.6 (508)</div>
+                <p class="p-feature">30h battery · Quick charge · Foldable</p>
+                <div class="p-price-row"><span class="p-price">$179</span></div>
+              </div>
+              <div class="card-actions">
+                <a href="product.html?id=pulse-wireless" class="btn btn-dark-pill btn-sm">View Details</a>
+                <button class="btn btn-outline-dark-pill btn-sm" onclick="swAddToCart('pulse-wireless','black',1)"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Basic -->
+          <div class="col-md-6 col-xl-4 product-item" data-category="Wired" data-price="39" data-rating="4.3" data-feature="mic">
+            <div class="product-card">
+              <a href="product.html?id=basic-wired" class="d-block">
+              <div class="product-media tone-3 position-relative">
+                <span class="media-badge badge-sale">Best Value</span>
+                <img src="images/wired-main.jpeg" alt="SonicWave Basic" loading="lazy">
+              </div>
+              </a>
+              <div class="card-body-sonic">
+                <span class="p-category">Wired · Budget</span>
+                <a href="product.html?id=basic-wired" class="text-decoration-none"><h3 class="p-name">SonicWave Basic</h3></a>
+                <div class="rating-row"><span class="stars">★★★★★</span> 4.3 (940)</div>
+                <p class="p-feature">3.5mm wired · In-line mic & remote</p>
+                <div class="p-price-row"><span class="p-price">$39</span><span class="p-price-old">$49</span></div>
+              </div>
+              <div class="card-actions">
+                <a href="product.html?id=basic-wired" class="btn btn-dark-pill btn-sm">View Details</a>
+                <button class="btn btn-outline-dark-pill btn-sm" onclick="swAddToCart('basic-wired','black',1)"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Dash -->
+          <div class="col-md-6 col-xl-4 product-item" data-category="Earbuds" data-price="99" data-rating="4.5" data-feature="waterproof mic">
+            <div class="product-card">
+              <a href="product.html?id=dash-sport" class="d-block">
+              <div class="product-media tone-4 position-relative">
+                <span class="media-badge">Sweatproof</span>
+                <img src="images/earbud-main.jpeg" alt="SonicWave Dash" loading="lazy">
+              </div>
+              </a>
+              <div class="card-body-sonic">
+                <span class="p-category">Earbuds · Sport</span>
+                <a href="product.html?id=dash-sport" class="text-decoration-none"><h3 class="p-name">SonicWave Dash</h3></a>
+                <div class="rating-row"><span class="stars">★★★★★</span> 4.5 (621)</div>
+                <p class="p-feature">IPX7 · Secure-fit hooks · 24h w/ case</p>
+                <div class="p-price-row"><span class="p-price">$99</span><span class="p-price-old">$119</span></div>
+              </div>
+              <div class="card-actions">
+                <a href="product.html?id=dash-sport" class="btn btn-dark-pill btn-sm">View Details</a>
+                <button class="btn btn-outline-dark-pill btn-sm" onclick="swAddToCart('dash-sport','black',1)"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Vortex Gaming -->
+          <div class="col-md-6 col-xl-4 product-item" data-category="Gaming" data-price="129" data-rating="4.7" data-feature="mic rgb">
+            <div class="product-card">
+              <a href="product.html?id=vortex-gaming" class="d-block">
+              <div class="product-media tone-5 position-relative">
+                <span class="media-badge badge-sale">RGB</span>
+                <img src="images/gaming-main.jpeg" alt="SonicWave Vortex RGB" loading="lazy">
+              </div>
+              </a>
+              <div class="card-body-sonic">
+                <span class="p-category">Gaming Headset</span>
+                <a href="product.html?id=vortex-gaming" class="text-decoration-none"><h3 class="p-name">SonicWave Vortex RGB</h3></a>
+                <div class="rating-row"><span class="stars">★★★★★</span> 4.7 (388)</div>
+                <p class="p-feature">7.1 Surround · RGB · Boom mic</p>
+                <div class="p-price-row"><span class="p-price">$129</span></div>
+              </div>
+              <div class="card-actions">
+                <a href="product.html?id=vortex-gaming" class="btn btn-dark-pill btn-sm">View Details</a>
+                <button class="btn btn-outline-dark-pill btn-sm" onclick="swAddToCart('vortex-gaming','black',1)"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Studio One -->
+          <div class="col-md-6 col-xl-4 product-item" data-category="Studio" data-price="299" data-rating="4.9" data-feature="">
+            <div class="product-card">
+              <a href="product.html?id=studio-one" class="d-block">
+              <div class="product-media tone-6 position-relative">
+                <span class="media-badge">Audiophile</span>
+                <img src="images/sport-main.jpeg" alt="SonicWave Studio One" loading="lazy">
+              </div>
+              </a>
+              <div class="card-body-sonic">
+                <span class="p-category">Studio · Audiophile</span>
+                <a href="product.html?id=studio-one" class="text-decoration-none"><h3 class="p-name">SonicWave Studio One</h3></a>
+                <div class="rating-row"><span class="stars">★★★★★</span> 4.9 (214)</div>
+                <p class="p-feature">Open-back · Flat reference tuning</p>
+                <div class="p-price-row"><span class="p-price">$299</span></div>
+              </div>
+              <div class="card-actions">
+                <a href="product.html?id=studio-one" class="btn btn-dark-pill btn-sm">View Details</a>
+                <button class="btn btn-outline-dark-pill btn-sm" onclick="swAddToCart('studio-one','walnut',1)"><i class="bi bi-bag-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Empty state (hidden by default) -->
+        <div class="empty-state d-none" id="emptyState">
+          <i class="bi bi-search"></i>
+          <h5 class="mt-3">No products match your filters</h5>
+          <p class="text-secondary">Try clearing a filter to see more results.</p>
+          <button class="btn btn-outline-dark-pill" id="emptyClear">Clear Filters</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer-sonic pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <span class="navbar-brand mb-3 d-inline-flex"><span class="brand-dot"></span>SonicWave</span>
+        <p class="small mt-2" style="max-width:320px;">Premium yet accessible audio. Designed to make every listen feel like the first time.</p>
+        <div class="mt-3">
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Shop</h6>
+        <a href="shop.html">All Headphones</a>
+        <a href="shop.html?category=Over-Ear">Over-Ear</a>
+        <a href="shop.html?category=Earbuds">Earbuds</a>
+        <a href="shop.html?category=Gaming">Gaming</a>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Support</h6>
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping Info</a>
+        <a href="#">Returns</a>
+        <a href="#">Warranty</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Join the SonicWave list</h6>
+        <p class="small">Get early access to drops and exclusive offers.</p>
+        <form class="js-newsletter-form d-flex gap-2">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button class="btn btn-primary-gradient" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+      <span>© 2026 SonicWave Audio Inc. All rights reserved.</span>
+      <span><a href="#" class="d-inline">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" class="d-inline">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // ---- PLP: filtering + sorting (vanilla JS) ----
+  const grid = document.getElementById('productGrid');
+  const items = Array.from(document.querySelectorAll('.product-item'));
+  const resultCount = document.getElementById('resultCount');
+  const emptyState = document.getElementById('emptyState');
+
+  function getChecked(name) {
+    return Array.from(document.querySelectorAll(`[data-filter="${name}"]:checked`)).map(el => el.value);
+  }
+
+  function applyFilters() {
+    const categories = getChecked('category');
+    const prices = getChecked('price');
+    const features = getChecked('feature');
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const cat = item.dataset.category;
+      const price = parseFloat(item.dataset.price);
+      const feats = (item.dataset.feature || '').split(' ');
+
+      const matchCat = categories.length === 0 || categories.includes(cat);
+      const matchPrice = prices.length === 0 || prices.some(range => {
+        const [min, max] = range.split('-').map(Number);
+        return price >= min && price <= max;
+      });
+      const matchFeature = features.length === 0 || features.every(f => feats.includes(f));
+
+      const visible = matchCat && matchPrice && matchFeature;
+      item.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+
+    resultCount.textContent = `Showing ${visibleCount} of ${items.length} products`;
+    emptyState.classList.toggle('d-none', visibleCount !== 0);
+  }
+
+  function applySort() {
+    const sortBy = document.getElementById('sortSelect').value;
+    const sorted = items.slice().sort((a, b) => {
+      if (sortBy === 'price-asc') return a.dataset.price - b.dataset.price;
+      if (sortBy === 'price-desc') return b.dataset.price - a.dataset.price;
+      if (sortBy === 'rating') return b.dataset.rating - a.dataset.rating;
+      return 0; // popularity = original order
+    });
+    sorted.forEach(el => grid.appendChild(el));
+  }
+
+  document.querySelectorAll('.filter-input').forEach(el => el.addEventListener('change', applyFilters));
+  document.getElementById('sortSelect').addEventListener('change', applySort);
+  document.getElementById('clearFilters').addEventListener('click', () => {
+    document.querySelectorAll('.filter-input').forEach(el => el.checked = false);
+    applyFilters();
+  });
+  document.getElementById('emptyClear').addEventListener('click', () => {
+    document.querySelectorAll('.filter-input').forEach(el => el.checked = false);
+    applyFilters();
+  });
+
+  // Pre-check category filter from URL (?category=Gaming)
+  const urlParams = new URLSearchParams(window.location.search);
+  const preCat = urlParams.get('category');
+  if (preCat) {
+    const box = document.querySelector(`[data-filter="category"][value="${preCat}"]`);
+    if (box) { box.checked = true; applyFilters(); }
+  }
+</script>
+</body>
+</html>

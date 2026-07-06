@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — SonicWave</title>
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================== NAVBAR ============================== -->
+<nav class="navbar navbar-expand-lg navbar-sonic fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="brand-dot"></span>SonicWave</a>
+    <div class="collapse navbar-collapse d-none d-lg-flex">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html?category=Over-Ear">Over-Ear</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html?category=Gaming">Gaming</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <a href="shop.html" class="icon-link d-none d-md-inline-flex" aria-label="Search"><i class="bi bi-search"></i></a>
+      <a href="cart.html" class="icon-link" aria-label="Cart">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge js-cart-count">0</span>
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start offcanvas-sonic" tabindex="-1" id="navMenu">
+  <div class="offcanvas-header">
+    <span class="navbar-brand"><span class="brand-dot"></span>SonicWave</span>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="shop.html">Shop All</a></li>
+      <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+    </ul>
+  </div>
+</div>
+
+<main style="padding-top:120px;" class="pb-5">
+  <div class="container">
+    <h1 class="mb-1">Your Cart</h1>
+    <p class="text-secondary mb-4" id="cartSubtitle">Loading your items…</p>
+
+    <div class="row g-4" id="cartLayout">
+      <!-- ===== Cart Items ===== -->
+      <div class="col-lg-8">
+        <div id="cartItemsWrap"></div>
+
+        <div id="emptyCartState" class="empty-state d-none">
+          <i class="bi bi-bag-x"></i>
+          <h5 class="mt-3">Your cart is empty</h5>
+          <p class="text-secondary">Looks like you haven't added any headphones yet.</p>
+          <a href="shop.html" class="btn btn-primary-gradient">Continue Shopping</a>
+        </div>
+
+        <a href="shop.html" class="btn btn-outline-dark-pill mt-2" id="continueShoppingBtn"><i class="bi bi-arrow-left me-2"></i>Continue Shopping</a>
+      </div>
+
+      <!-- ===== Order Summary ===== -->
+      <div class="col-lg-4">
+        <div class="summary-card">
+          <h5 class="mb-3">Order Summary</h5>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control promo-input" placeholder="Promo code" id="promoInput" style="border-top-right-radius:0;border-bottom-right-radius:0;">
+            <button class="btn btn-outline-dark-pill" style="border-top-left-radius:0;border-bottom-left-radius:0;" id="applyPromoBtn">Apply</button>
+          </div>
+          <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">$0.00</span></div>
+          <div class="summary-row"><span>Estimated Shipping</span><span id="sumShipping">$0.00</span></div>
+          <div class="summary-row"><span>Estimated Tax</span><span id="sumTax">$0.00</span></div>
+          <div class="summary-row text-success d-none" id="sumDiscountRow"><span>Discount</span><span id="sumDiscount">-$0.00</span></div>
+          <div class="summary-row total"><span>Total</span><span id="sumTotal">$0.00</span></div>
+          <a href="checkout.html" class="btn btn-primary-gradient w-100 mt-3" id="checkoutBtn">Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i></a>
+          <div class="trust-badges-row mt-3 justify-content-center">
+            <span class="tb-item"><i class="bi bi-lock-fill"></i> Secure Checkout</span>
+            <span class="tb-item"><i class="bi bi-arrow-repeat"></i> Free Returns</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer-sonic pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <span class="navbar-brand mb-3 d-inline-flex"><span class="brand-dot"></span>SonicWave</span>
+        <p class="small mt-2" style="max-width:320px;">Premium yet accessible audio. Designed to make every listen feel like the first time.</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Shop</h6>
+        <a href="shop.html">All Headphones</a>
+        <a href="shop.html?category=Gaming">Gaming</a>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Support</h6>
+        <a href="#">Contact Us</a>
+        <a href="#">Returns</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Join the SonicWave list</h6>
+        <form class="js-newsletter-form d-flex gap-2">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button class="btn btn-primary-gradient" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 SonicWave Audio Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  let appliedDiscount = 0;
+
+  function renderCart() {
+    const cart = swGetCart();
+    const wrap = document.getElementById('cartItemsWrap');
+    const empty = document.getElementById('emptyCartState');
+    const continueBtn = document.getElementById('continueShoppingBtn');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    if (cart.length === 0) {
+      wrap.innerHTML = '';
+      empty.classList.remove('d-none');
+      continueBtn.classList.add('d-none');
+      checkoutBtn.classList.add('disabled');
+      checkoutBtn.setAttribute('aria-disabled', 'true');
+      document.getElementById('cartSubtitle').textContent = 'Your cart is empty.';
+    } else {
+      empty.classList.add('d-none');
+      continueBtn.classList.remove('d-none');
+      checkoutBtn.classList.remove('disabled');
+      document.getElementById('cartSubtitle').textContent = `${swCartCount()} item${swCartCount() > 1 ? 's' : ''} in your cart`;
+
+      wrap.innerHTML = cart.map(item => {
+        const p = swGetProduct(item.id);
+        if (!p) return '';
+        const variant = p.variants.color.find(c => c.key === item.color) || p.variants.color[0];
+        const tone = 'tone-' + p.tone;
+        const lineTotal = p.price * item.qty;
+        return `
+        <div class="cart-line d-flex gap-3" data-id="${item.id}" data-color="${item.color}">
+          <a href="product.html?id=${p.id}" class="product-media cl-media ${tone}">
+            <img src="${swMainImage(p)}" alt="${p.name}" loading="lazy">
+          </a>
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between">
+              <div>
+                <a href="product.html?id=${p.id}" class="text-decoration-none text-dark"><h6 class="mb-1 fw-semibold">${p.name}</h6></a>
+                <div class="small text-secondary mb-1">Color: ${variant.label}</div>
+                <div class="fw-semibold">${swFormatPrice(p.price)}</div>
+              </div>
+              <button class="btn-ghost-icon remove-item-btn" aria-label="Remove item"><i class="bi bi-trash3"></i></button>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="qty-stepper">
+                <button type="button" class="qty-dec">−</button>
+                <input type="text" class="qty-val" value="${item.qty}" readonly>
+                <button type="button" class="qty-inc">+</button>
+              </div>
+              <div class="fw-bold line-total">${swFormatPrice(lineTotal)}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+
+      // Wire up per-line events
+      wrap.querySelectorAll('.cart-line').forEach(line => {
+        const id = line.dataset.id, color = line.dataset.color;
+        line.querySelector('.qty-inc').addEventListener('click', () => {
+          const item = swGetCart().find(i => i.id === id && i.color === color);
+          swUpdateQty(id, color, item.qty + 1);
+          renderCart();
+        });
+        line.querySelector('.qty-dec').addEventListener('click', () => {
+          const item = swGetCart().find(i => i.id === id && i.color === color);
+          swUpdateQty(id, color, Math.max(1, item.qty - 1));
+          renderCart();
+        });
+        line.querySelector('.remove-item-btn').addEventListener('click', () => {
+          swRemoveFromCart(id, color);
+          renderCart();
+        });
+      });
+    }
+
+    updateSummary();
+  }
+
+  function updateSummary() {
+    const subtotal = swCartSubtotal();
+    const shipping = subtotal === 0 ? 0 : (subtotal >= 75 ? 0 : 8.99);
+    const tax = subtotal * 0.07;
+    const discount = subtotal * appliedDiscount;
+    const total = Math.max(0, subtotal + shipping + tax - discount);
+
+    document.getElementById('sumSubtotal').textContent = swFormatPrice(subtotal);
+    document.getElementById('sumShipping').textContent = shipping === 0 ? 'Free' : swFormatPrice(shipping);
+    document.getElementById('sumTax').textContent = swFormatPrice(tax);
+    document.getElementById('sumTotal').textContent = swFormatPrice(total);
+
+    const discRow = document.getElementById('sumDiscountRow');
+    if (discount > 0) {
+      discRow.classList.remove('d-none');
+      document.getElementById('sumDiscount').textContent = '-' + swFormatPrice(discount);
+    } else {
+      discRow.classList.add('d-none');
+    }
+  }
+
+  document.getElementById('applyPromoBtn').addEventListener('click', () => {
+    const code = document.getElementById('promoInput').value.trim().toUpperCase();
+    if (code === 'SONIC10') {
+      appliedDiscount = 0.10;
+      swShowToast('Promo applied', '10% off your order');
+    } else if (code) {
+      appliedDiscount = 0;
+      swShowToast('Invalid code', 'Try SONIC10 for 10% off');
+    }
+    updateSummary();
+  });
+
+  renderCart();
+</script>
+</body>
+</html>
