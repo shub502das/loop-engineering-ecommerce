@@ -92,7 +92,7 @@ const SW_PRODUCTS = [
   },
   {
     id: "basic-wired",
-    name: "SonicWave Basic",
+    name: "Sony Wired Headset",
     category: "Wired",
     tier: "Budget",
     price: 39,
@@ -134,7 +134,7 @@ const SW_PRODUCTS = [
   },
   {
     id: "dash-sport",
-    name: "SonicWave Dash",
+    name: "Realme Earbud Pro",
     category: "Earbuds",
     tier: "Sport",
     price: 99,
@@ -218,7 +218,7 @@ const SW_PRODUCTS = [
   },
   {
     id: "studio-one",
-    name: "SonicWave Studio One",
+    name: "Wireless Sport Headphone",
     category: "Studio",
     tier: "Audiophile",
     price: 299,

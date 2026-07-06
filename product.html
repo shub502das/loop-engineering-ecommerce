@@ -219,7 +219,7 @@
   // ---- Build gallery thumbnails (real photos, one per angle) ----
   let thumbsHtml = '';
   product.gallery.forEach((src, i) => {
-    thumbsHtml += `<div class="col-4">
+    thumbsHtml += `<div class="col-3">
       <button type="button" class="product-media pdp-thumb ${toneClass} ${i === 0 ? 'active' : ''}" data-idx="${i}" aria-label="View image ${i + 1}">
         <img src="${src}" alt="${product.name} view ${i + 1}" loading="lazy">
       </button>
@@ -260,14 +260,14 @@
     </div>
     <div class="col-lg-6">
       <div class="mb-2">${badgesHtml}</div>
-      <p class="section-eyebrow mb-1">${product.category} · ${product.tier}</p>
+      <p class="section-eyebrow mt-4">${product.category} · ${product.tier}</p>
       <h1 class="mb-2" style="font-size:2.1rem;">${product.name}</h1>
       <div class="d-flex align-items-center gap-2 mb-3">
         <span class="text-warning">${swStars(product.rating)}</span>
         <span class="fw-semibold">${product.rating}</span>
         <span class="text-secondary">(${product.reviews} reviews)</span>
       </div>
-      <div class="mb-3">${priceHtml}</div>
+      <div class="mb-3 d-flex align-items-center">${priceHtml}</div>
       <p class="text-secondary mb-4">${product.description}</p>
 
       <div class="mb-4 d-none">
