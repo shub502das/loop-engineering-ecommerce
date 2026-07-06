@@ -15,9 +15,9 @@ const SW_PRODUCTS = [
     reviews: 312,
     tone: 1,
     gallery: [
-      "images/over1-main.jpeg",
-      "images/over-1-1.jpeg",
-      "images/over-1-2.jpeg"
+      "images/over1-main.png",
+      "images/over-1-1.png",
+      "images/over-1-2.png"
     ],
     tagline: "Flagship noise-cancelling over-ear headphones",
     shortFeature: "Adaptive ANC · 40h battery",
@@ -58,9 +58,9 @@ const SW_PRODUCTS = [
     reviews: 508,
     tone: 2,
     gallery: [
-      "images/wireless-main.jpeg",
-      "images/wireless-1.jpeg",
-      "images/wireless-2.jpeg"
+      "images/wireless-main.png",
+      "images/wireless-1.png",
+      "images/wireless-2.png"
     ],
     tagline: "Everyday wireless headphones for work and play",
     shortFeature: "30h battery · Quick Charge",
@@ -101,9 +101,9 @@ const SW_PRODUCTS = [
     reviews: 940,
     tone: 3,
     gallery: [
-      "images/wired-main.jpeg",
-      "images/wired-1.jpeg",
-      "images/wired-2.jpeg"
+      "images/wired-main.png",
+      "images/wired-1.png",
+      "images/wired-2.png"
     ],
     tagline: "No-fuss wired headphones, big on value",
     shortFeature: "3.5mm · In-line mic",
@@ -143,9 +143,9 @@ const SW_PRODUCTS = [
     reviews: 621,
     tone: 4,
     gallery: [
-      "images/earbud-main.jpeg",
-      "images/earbud-1.jpeg",
-      "images/earbud-2.jpeg"
+      "images/earbud-main.png",
+      "images/earbud-1.png",
+      "images/earbud-2.png"
     ],
     tagline: "Sweatproof earbuds built for training",
     shortFeature: "IPX7 · Secure-Fit Hooks",
@@ -186,9 +186,9 @@ const SW_PRODUCTS = [
     reviews: 388,
     tone: 5,
     gallery: [
-      "images/gaming-main.jpeg",
-      "images/gaming-1.jpeg",
-      "images/gaming-2.jpeg"
+      "images/gaming-main.png",
+      "images/gaming-1.png",
+      "images/gaming-2.png"
     ],
     tagline: "RGB gaming headset with 7.1 surround",
     shortFeature: "7.1 Surround · RGB · Boom Mic",
@@ -227,9 +227,9 @@ const SW_PRODUCTS = [
     reviews: 214,
     tone: 6,
     gallery: [
-      "images/sport-main.jpeg",
-      "images/sport-1.jpeg",
-      "images/sport-2.jpeg"
+      "images/sport-main.png",
+      "images/sport-1.png",
+      "images/sport-2.png"
     ],
     tagline: "Open-back studio headphones for critical listening",
     shortFeature: "Open-Back · Flat Response",
